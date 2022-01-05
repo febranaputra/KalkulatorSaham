@@ -1,9 +1,3 @@
-/*
-Nama : I Gede Febrana Putra
-NIM  : 2101020025
-Prodi : Teknik Informatika
-*/
-
 
 #include <iostream>
 using namespace std;
