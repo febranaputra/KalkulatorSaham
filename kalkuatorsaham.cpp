@@ -1,13 +1,12 @@
-
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int net_buy, net_sell;
+    int net_buy, net_sell, tot_value, profit_loss;
     int menu, lot, lot_2, tot_lot, lembarshm;
-    float price, price_2, tot_price, sellprice, profit_loss;
-    float avg_price, persen_prof_loss, tot_value;
+    float price, price_2, tot_price, sellprice;
+    float avg_price, persen_prof_loss;
     menu :
     system("cls");
     cout << "\t\tKalkulator Saham\n\n";
@@ -106,7 +105,7 @@ int main()
         cin >> nilai_sekarang;
         cout << "Suku Bunga per Tahun / Interest Rate (%) \n[Ex:15]    : "; 
         cin >> bunga;
-        cout << "Jumlah Periode (Tahun) / Time of Period \n[*Pilih 3/5/10/15] : "; 
+        cout << "Jumlah Periode (Tahun) / Time of Period \n[*Pilih 1-5] : "; 
         cin >> tahun;
         cout << endl;
 
@@ -115,8 +114,8 @@ int main()
         suku_bunga = bunga / 100;
         A = (1 + suku_bunga) ; //deklarasi A agar
         cout << "--------------------------------------------------" << endl;
-         if(tahun == 3){
-         compound_interest = (nilai_sekarang * (A * A * A)) - nilai_sekarang; //jika 3 tahun maka A pangkat 3
+         if(tahun == 1){
+         compound_interest = (nilai_sekarang * (A) - nilai_sekarang); //jika 3 tahun maka A pangkat 3
          nilai_masdep = nilai_sekarang + compound_interest;
          selisih = (nilai_masdep - nilai_sekarang);
          growth_rate = selisih / nilai_sekarang * 100;
@@ -124,8 +123,8 @@ int main()
         cout << "Nilai Masa Depan / Future Value : " << "Rp. " << nilai_masdep << endl;
         cout << "Growth Rate        \t\t: " << growth_rate << " % " << endl;
         } 
-        else if (tahun == 5){
-         compound_interest = (nilai_sekarang * (A * A * A * A * A)) - nilai_sekarang; //A pangkat 5
+        else if (tahun == 2){
+         compound_interest = (nilai_sekarang * (A * A )) - nilai_sekarang; //A pangkat 5
          nilai_masdep = nilai_sekarang + compound_interest;
          selisih = (nilai_masdep - nilai_sekarang);
          growth_rate = selisih / nilai_sekarang * 100;
@@ -133,8 +132,8 @@ int main()
         cout << "Nilai Masa Depan / Future Value : " << "Rp. " << nilai_masdep << endl;
         cout << "Growth Rate        \t\t: " << growth_rate << " % " << endl;
         }  
-        else if (tahun == 10){
-        compound_interest = (nilai_sekarang * (A * A * A * A * A * A  * A * A * A *A)) - nilai_sekarang;
+        else if (tahun == 3){
+        compound_interest = (nilai_sekarang * (A * A * A )) - nilai_sekarang;
          nilai_masdep = nilai_sekarang + compound_interest;
          selisih = (nilai_masdep - nilai_sekarang);
          growth_rate = selisih / nilai_sekarang * 100;
@@ -142,15 +141,23 @@ int main()
         cout << "Nilai Masa Depan / Future Value : " << "Rp. " << nilai_masdep << endl;
         cout << "Growth Rate        \t\t: " << growth_rate << " % " << endl;
         }
-        else if (tahun == 15){
-        compound_interest = (nilai_sekarang * (A * A * A * A * A * A  * A * A * A *A * A * A * A * A * A)) - nilai_sekarang;
+        else if (tahun == 4){
+        compound_interest = (nilai_sekarang * (A * A * A * A )) - nilai_sekarang;
          nilai_masdep = nilai_sekarang + compound_interest;
          selisih = (nilai_masdep - nilai_sekarang);
          growth_rate = selisih / nilai_sekarang * 100;
         cout << "Compound Interest \t\t: " << "Rp. " << compound_interest << endl;
         cout << "Nilai Masa Depan / Future Value : " << "Rp. " << nilai_masdep << endl;
         cout << "Growth Rate        \t\t: " << growth_rate << " % " << endl;
-        } else {
+        } else if (tahun == 5){
+        compound_interest = (nilai_sekarang * (A * A * A * A * A)) - nilai_sekarang;
+         nilai_masdep = nilai_sekarang + compound_interest;
+         selisih = (nilai_masdep - nilai_sekarang);
+         growth_rate = selisih / nilai_sekarang * 100;
+        cout << "Compound Interest \t\t: " << "Rp. " << compound_interest << endl;
+        cout << "Nilai Masa Depan / Future Value : " << "Rp. " << nilai_masdep << endl;
+        cout << "Growth Rate        \t\t: " << growth_rate << " % " << endl;
+        }  else {
             cout << "Data yang anda masukan belum tersedia saat ini" << endl;
         }
     
